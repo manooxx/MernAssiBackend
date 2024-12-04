@@ -11,7 +11,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-app.use(cors({origin:'*'}));
+app.use(cors({origin: 'https://mern-assi-frontend.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow custom headers if used
+    credentials: true // Allow cookies and authentication headers if needed
+     }));
 // app.use(cors({origin:'https://mern-assi-frontend.vercel.app/'}));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));//for serve uploaded images
