@@ -16,6 +16,7 @@ app.use(cors({origin: 'https://mern-assi-frontend.vercel.app',
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow custom headers if used
     credentials: true // Allow cookies and authentication headers if needed
      }));
+app.options('*', cors());
 // app.use(cors({origin:'https://mern-assi-frontend.vercel.app/'}));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));//for serve uploaded images
